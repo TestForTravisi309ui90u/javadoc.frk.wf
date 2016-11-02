@@ -28,7 +28,7 @@ rm -Rf $TMP_DIR
 mkdir -p $TMP_DIR
 
 IFS=',' 
-for f in "$MODS"; 
+for f in $MODS; 
 do 
     file="index/$f.sh"
     echo "Run $file"

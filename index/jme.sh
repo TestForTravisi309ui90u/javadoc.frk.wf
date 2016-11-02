@@ -34,23 +34,28 @@ cd engine
 $ANT_BIN javadoc
 cp -Rf dist/javadoc $CURR_DIR/$OUT_DIR/jmonkeyengine/3.0
 $GIT_BIN  reset --hard HEAD
+echo "<a href='3.0/'>3.0</a><br />" >> $CURR_DIR/$OUT_DIR/jmonkeyengine/index.html
 
 $GIT_BIN checkout v3.1
 $GIT_BIN  pull origin v3.1
 ./gradlew mergedJavadoc
 cp -Rf  dist/javadoc  $CURR_DIR/$OUT_DIR/jmonkeyengine/3.1
 $GIT_BIN  reset --hard HEAD
+echo "<a href='3.1/'>3.1</a><br />" >> $CURR_DIR/$OUT_DIR/jmonkeyengine/index.html
+
 
 $GIT_BIN checkout PBRisComing
 $GIT_BIN  pull origin PBRisComing
 ./gradlew mergedJavadoc
 cp -Rf  dist/javadoc  $CURR_DIR/$OUT_DIR/jmonkeyengine/PBRisComing
 $GIT_BIN  reset --hard HEAD
+echo "<a href='PBRisComing/'>PBRisComing</a><br />" >> $CURR_DIR/$OUT_DIR/jmonkeyengine/index.html
+
 
 $GIT_BIN checkout master
 $GIT_BIN  pull origin master
 ./gradlew mergedJavadoc
 cp -Rf dist/javadoc $CURR_DIR/$OUT_DIR/jmonkeyengine/master
 $GIT_BIN  reset --hard HEAD
-
+echo "<a href='master/'>master</a><br />" >> $CURR_DIR/$OUT_DIR/jmonkeyengine/index.html
 

@@ -36,4 +36,6 @@ do
     $file $OUT_DIR $TMP_DIR
 done
 
-$SWIFT_BIN -V 2.0 upload $TARGET_CONTAINER $OUT_DIR/*   
+cd $OUT_DIR
+$SWIFT_BIN -V 2.0 upload $TARGET_CONTAINER *   --skip-identical
+echo "Done!"

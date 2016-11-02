@@ -8,8 +8,6 @@ script:
 - ./make.sh
 before_install:
 - sudo apt-get -qq update 
-after_success:
-- ./make.sh
 env:
   global:
   - OUT_DIR: b/

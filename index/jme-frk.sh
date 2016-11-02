@@ -17,10 +17,11 @@ then
 fi
 
 cd $TMP_DIR/jme-frk
+mkdir -p $CURR_DIR/$OUT_DIR/jmonkeyengine
 
 $GIT_BIN checkout frk
 $GIT_BIN pull origin frk
 ./gradlew mergedJavadoc
-cp -Rf  dist/javadoc  $CURR_DIR/$OUT_DIR/jme-frk
+cp -Rf  dist/javadoc  $CURR_DIR/$OUT_DIR/jmonkeyengine/frk
 $GIT_BIN reset --hard HEAD
 

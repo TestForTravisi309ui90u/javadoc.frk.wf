@@ -24,24 +24,32 @@ then
 fi
 
 cd $TMP_DIR/jme
+mkdir -p $CURR_DIR/$OUT_DIR/jmonkeyengine
+
 
 $GIT_BIN checkout 3.0
 $GIT_BIN  pull origin 3.0
 
-$ANT_BIN javadoc
-cp -Rf dist/javadoc $CURR_DIR/$OUT_DIR/jme3.0
+$ANT_BIN build-engine javadoc
+cp -Rf dist/javadoc $CURR_DIR/$OUT_DIR/jmonkeyengine/3.0
 $GIT_BIN  reset --hard HEAD
 
 $GIT_BIN checkout v3.1
 $GIT_BIN  pull origin v3.1
 ./gradlew mergedJavadoc
-cp -Rf  dist/javadoc  $CURR_DIR/$OUT_DIR/jme3.1
+cp -Rf  dist/javadoc  $CURR_DIR/$OUT_DIR/jmonkeyengine/3.1
+$GIT_BIN  reset --hard HEAD
+
+$GIT_BIN checkout PBRisComing
+$GIT_BIN  pull origin PBRisComing
+./gradlew mergedJavadoc
+cp -Rf  dist/javadoc  $CURR_DIR/$OUT_DIR/jmonkeyengine/PBRisComing
 $GIT_BIN  reset --hard HEAD
 
 $GIT_BIN checkout master
 $GIT_BIN  pull origin master
 ./gradlew mergedJavadoc
-cp -Rf dist/javadoc $CURR_DIR/$OUT_DIR/jme-master
+cp -Rf dist/javadoc $CURR_DIR/$OUT_DIR/jmonkeyengine/master
 $GIT_BIN  reset --hard HEAD
 
 

@@ -1,0 +1,15 @@
+sudo: required
+dist: trusty
+os:
+- linux
+notifications:
+  email: true
+script:
+- ./make.sh
+before_install:
+- sudo apt-get -qq update 
+after_success:
+- ./make.sh
+env:
+  global:
+  - ABC: 0

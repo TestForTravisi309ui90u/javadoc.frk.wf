@@ -30,7 +30,8 @@ mkdir -p $CURR_DIR/$OUT_DIR/jmonkeyengine
 $GIT_BIN checkout 3.0
 $GIT_BIN  pull origin 3.0
 
-$ANT_BIN build-engine javadoc
+cd engine
+$ANT_BIN javadoc
 cp -Rf dist/javadoc $CURR_DIR/$OUT_DIR/jmonkeyengine/3.0
 $GIT_BIN  reset --hard HEAD
 

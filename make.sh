@@ -39,5 +39,5 @@ done
 cd $OUT_DIR
 while IFS= read -d $'\0' -r file ; do
     echo "Upload $file"
-    #$SWIFT_BIN -V 2.0 upload $TARGET_CONTAINER $file   
+    $SWIFT_BIN -V 2.0 upload $TARGET_CONTAINER $file   
 done < <(find * -type f -print0)

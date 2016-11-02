@@ -27,8 +27,10 @@ cp data/* $OUT_DIR/
 rm -Rf $TMP_DIR
 mkdir -p $TMP_DIR
 
-for file in index/*.sh
-do
+IFS=',' 
+for f in "$MODS"; 
+do 
+    file="index/$f.sh"
     echo "Run $file"
     chmod +x $file
     $file $OUT_DIR $TMP_DIR

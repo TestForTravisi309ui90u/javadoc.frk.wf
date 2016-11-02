@@ -16,7 +16,7 @@ fi
 if [ "$SWIFT_BIN" == "" ];
 then
     sudo apt-get install -y python python-pip python-dev
-    sudo pip install python-swift python-keystone
+    sudo pip install python-swiftclient python-keystoneclient
     SWIFT_BIN=`which swift`
 fi
 
@@ -30,6 +30,7 @@ mkdir -p $TMP_DIR
 for file in index/*.sh
 do
     echo "Run $file"
+    chmod +x $file
     $file $OUT_DIR $TMP_DIR
 done
 

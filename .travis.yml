@@ -12,5 +12,5 @@ after_success:
 - ./make.sh
 env:
   global:
-  - OUT_DIR: build/
+  - OUT_DIR: b/
   - TMP_DIR: tmp/
